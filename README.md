@@ -9,7 +9,7 @@ This repository implements a medallion-style data pipeline for the OList Brazili
 
 ## Data Model
 
-### Star schema (Gold layer target)
+### Star schema
 
 <img src="https://github.com/user-attachments/assets/dbff6681-65c2-4c74-9626-5788ecc0f1a0" alt="Star schema" style="padding: 12px; border-radius: 8px;" />
 
@@ -57,13 +57,6 @@ Creates dimensional model tables with surrogate keys and `dwh_date` defaults:
 - Dimensions: `silver.dim_customers`, `silver.dim_sellers`, `silver.dim_products`, `silver.dim_reviews`, `silver.dim_payments`
 - Fact: `silver.fact_orders`
 
-Key transformation patterns:
-
-- Null handling with `coalesce` for payment and product attributes
-- Type normalization with `try_cast` for review scores and date/timestamp columns
-- Review filtering to keep only reviews linked to existing orders and valid timestamps
-- Fact table assembly through joins between bronze transaction data and silver dimensions
-
 ### Gold layer
 
 Creates curated views with business-friendly naming:
@@ -77,10 +70,11 @@ Creates curated views with business-friendly naming:
 
 ## Data Quality Findings Captured in Notebooks
 
-- Some customer ZIP prefixes do not exist in geolocation data
-- Geolocation contains repeated ZIP rows
-- Orders, payments, items, sellers, and products are largely well-mapped
-- Reviews include orphaned records; invalid/unmapped reviews are excluded in silver transformations
+- `bronze.geolocation` was just extra information that cannot be mapped to `bronze.sellers` and `bronze.customers` table due to lack of primary key
+- `bronze.reviews` has text and timestamp data in the `review_score` field
+- Reviews were mapped to columns which do not have an order in the first place
+- `bronze.payments` table doesnt have a unique identifier field so `order_id` field was carried forward to the silver table causing moderate confusion in the silver layer
+- `price` field is present in the bronze.orders table instead of `bronze.products` table. Therefore that field was shifted to the `silver.dim_products` table due to relevance
 
 ## Execution Order
 
