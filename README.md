@@ -11,11 +11,11 @@ This repository implements a medallion-style data pipeline for the OList Brazili
 
 ### Star schema (Gold layer target)
 
-<img src="https://github.com/user-attachments/assets/72fe2d67-e0cc-4c91-ba6a-ec515e833a62" alt="Star schema" style="padding: 12px; border-radius: 8px;" />
+<img src="https://github.com/user-attachments/assets/dbff6681-65c2-4c74-9626-5788ecc0f1a0" alt="Star schema" style="padding: 12px; border-radius: 8px;" />
 
 ### Raw dataset relations
 
-<img src="https://github.com/user-attachments/assets/c7ad4379-9859-47e6-b88c-ea6456a5c5c2" alt="Raw dataset relations" style="padding: 12px; border-radius: 8px;" />
+<img src="https://github.com/user-attachments/assets/84b58ac5-f619-49d2-a345-9d15db729036" alt="Raw dataset relations" style="padding: 12px; border-radius: 8px;" />
 
 ## Repository Notebooks
 
