@@ -11,11 +11,11 @@ This repository implements a medallion-style data pipeline for the OList Brazili
 
 ### Star schema (Gold layer target)
 
-<img src="https://github.com/user-attachments/assets/72fe2d67-e0cc-4c91-ba6a-ec515e833a62" alt="Star schema" style="background-color: #ffffff; padding: 12px; border-radius: 8px;" />
+<img src="https://github.com/user-attachments/assets/72fe2d67-e0cc-4c91-ba6a-ec515e833a62" alt="Star schema" style="padding: 12px; border-radius: 8px;" />
 
 ### Raw dataset relations
 
-<img src="https://github.com/user-attachments/assets/c7ad4379-9859-47e6-b88c-ea6456a5c5c2" alt="Raw dataset relations" style="background-color: #ffffff; padding: 12px; border-radius: 8px;" />
+<img src="https://github.com/user-attachments/assets/c7ad4379-9859-47e6-b88c-ea6456a5c5c2" alt="Raw dataset relations" style="padding: 12px; border-radius: 8px;" />
 
 ## Repository Notebooks
 
@@ -86,11 +86,9 @@ Creates curated views with business-friendly naming:
 
 Run notebooks in this order:
 
-1. `Data Exploration.ipynb`
-2. `Data Quality Check.ipynb`
-3. `Bronze Layer.ipynb`
-4. `Silver Layer.ipynb`
-5. `Gold Layer.ipynb`
+1. `Bronze Layer.ipynb`
+2. `Silver Layer.ipynb`
+3. `Gold Layer.ipynb`
 
 ## Notes
 
